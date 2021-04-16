@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     Rigidbody rigid;
     public float jumpPower; 
     bool isJump;
+    public int itemCount;
 
     void Awake()
     {
@@ -30,11 +31,20 @@ public class Player : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         rigid.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
-    }
+    } 
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Plane") 
             isJump = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "Item")
+        {
+            itemCount++;
+            other.gameObject.SetActive(false);
+        }
     }
 }
