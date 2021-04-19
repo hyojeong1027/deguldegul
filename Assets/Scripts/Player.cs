@@ -37,13 +37,13 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Plane") 
+        if (collision.gameObject.tag == "Floor") 
             isJump = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Item")
+        if(other.tag == "Item")
         {
             itemCount++;
             audio.Play();
