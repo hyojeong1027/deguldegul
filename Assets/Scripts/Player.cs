@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     public float jumpPower; 
     bool isJump;
     public int itemCount;
+    AudioSource audio;
 
     void Awake()
     {
         isJump = false; 
         rigid = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,7 +46,9 @@ public class Player : MonoBehaviour
         if(other.name == "Item")
         {
             itemCount++;
+            audio.Play();
             other.gameObject.SetActive(false);
+            
         }
     }
 }
