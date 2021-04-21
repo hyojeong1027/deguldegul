@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     bool isJump;
     public int itemCount;
     AudioSource audio;
+    public GameManagerLogic manager;
 
     void Awake()
     {
@@ -49,6 +50,17 @@ public class Player : MonoBehaviour
             audio.Play();
             other.gameObject.SetActive(false);
             
+        }
+        else if(other.tag == "Finish")
+        {
+            if(itemCount == manager.totalItemCount)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
