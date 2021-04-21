@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Item
   - Floor
-  - FInish
+  - FinishPoint
   layers:
   - Default
   - TransparentFX

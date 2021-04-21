@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -51,15 +52,15 @@ public class Player : MonoBehaviour
             other.gameObject.SetActive(false);
             
         }
-        else if(other.tag == "Finish")
+        else if(other.tag == "FinishPoint")
         {
             if(itemCount == manager.totalItemCount)
             {
-
+                SceneManager.LoadScene("Stage_01");
             }
             else
             {
-
+                SceneManager.LoadScene("Tutorial");
             }
         }
     }
