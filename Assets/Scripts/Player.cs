@@ -56,11 +56,11 @@ public class Player : MonoBehaviour
         {
             if(itemCount == manager.totalItemCount)
             {
-                SceneManager.LoadScene("Stage_01");
+                SceneManager.LoadScene("Stage_"+(manager.stage+1));
             }
             else
             {
-                SceneManager.LoadScene("Tutorial");
+                SceneManager.LoadScene("Stage_"+manager.stage);
             }
         }
     }
