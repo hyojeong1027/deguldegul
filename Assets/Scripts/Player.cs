@@ -46,12 +46,8 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Obstacle")
         {
-            Vector3 originPoint = new Vector3();
-            originPoint.x = 0f;
-            originPoint.y = 5f;
-            originPoint.z = -5f;
+            rigid.AddForce((transform.position - collision.transform.position).normalized * 1000);
 
-            this.transform.position = originPoint;
         }
     }
 
