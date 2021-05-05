@@ -46,18 +46,13 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Obstacle")
         {
-
             Vector3 originPoint = new Vector3();
             originPoint.x = 0f;
             originPoint.y = 5f;
             originPoint.z = -5f;
 
             this.transform.position = originPoint;
-
-            
-
         }
-
     }
 
     void OnTriggerEnter(Collider other)

@@ -959,6 +959,7 @@ MonoBehaviour:
   jumpPower: 20
   itemCount: 0
   manager: {fileID: 1066995314}
+  backSpeed: 0
 --- !u!135 &1687500726
 SphereCollider:
   m_ObjectHideFlags: 0
