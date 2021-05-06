@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - FinishPoint
   - Obstacle
+  - SuperJump
   layers:
   - Default
   - TransparentFX

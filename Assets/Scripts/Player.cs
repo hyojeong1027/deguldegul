@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Obstacle")
         {
-            rigid.AddForce((transform.position - collision.transform.position).normalized * 1000);
+            rigid.AddForce((transform.position - collision.transform.position).normalized * backSpeed);
 
         }
     }
@@ -74,6 +74,14 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    void OnTriggerStay(Collider other) // ¹°¸®Àû Ãæµ¹ÀÌ¾Æ´Ñ °ãÃÆ³ª ¾È°ãÃÆ³ª 
+    {
+        if(other.tag == "SuperJump")
+        {
+            rigid.AddForce(Vector3.up * 2, ForceMode.Impulse);
+        }
     }
 }
 
