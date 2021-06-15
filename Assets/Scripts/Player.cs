@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int itemCount;
     AudioSource audio;
     public GameManagerLogic manager;
+    public float speed = 1.0f;
     public float backSpeed;
 
     void Awake()
@@ -35,7 +36,8 @@ public class Player : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
-        rigid.AddForce(new Vector3(h, 0, v), ForceMode.Impulse);
+        float translateMove = speed * Time.deltaTime;
+        rigid.AddForce(new Vector3(h , 0, v), ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
