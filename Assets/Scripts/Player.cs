@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
     public float speed = 1.0f;
     public float backSpeed;
 
+   // Transform playerTransform;
+   // Vector3 Offset;
+
+
+
     void Awake()
     {
         isJump = false;
@@ -28,14 +33,21 @@ public class Player : MonoBehaviour
             isJump = true;
             rigid.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
         }
+
     }
+    
+
+
+  // void LateUpdate()
+  // {
+  //     transform.position = playerTransform.position + Offset;
+  // }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-
         float translateMove = speed * Time.deltaTime;
         rigid.AddForce(new Vector3(h , 0, v), ForceMode.Impulse);
     }
@@ -49,8 +61,16 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.tag == "Obstacle")
         {
             rigid.AddForce((transform.position - collision.transform.position).normalized * backSpeed);
-
         }
+        else if (collision.gameObject.tag == "MoveFloor")
+        {
+             // playerTransform = GameObject.FindGameObjectWithTag("MoveFloor").transform;
+             // Offset = transform.position - playerTransform.position;
+             isJump = false;
+       
+        }
+
+
     }
 
     void OnTriggerEnter(Collider other)
