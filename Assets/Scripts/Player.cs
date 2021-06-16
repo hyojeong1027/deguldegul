@@ -48,8 +48,9 @@ public class Player : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+
         float translateMove = speed * Time.deltaTime;
-        rigid.AddForce(new Vector3(h , 0, v), ForceMode.Impulse);
+        rigid.AddForce(new Vector3(h* translateMove, 0, v* translateMove), ForceMode.Impulse);
     }
 
     void OnCollisionEnter(Collision collision)
