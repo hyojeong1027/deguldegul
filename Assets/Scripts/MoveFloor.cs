@@ -13,7 +13,6 @@ public class MoveFloor : MonoBehaviour
     {
         if (Time.time >= startTime_F)
         {
-            //이동 로직처리 
             transform.position += new Vector3(0, 0, moveSpeed_F * Time.deltaTime * sign_F);
 
             if (transform.position.z <= minZ || transform.position.z >= maxZ)

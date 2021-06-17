@@ -14,11 +14,6 @@ public class Player : MonoBehaviour
     public float speed = 1.0f;
     public float backSpeed;
 
-   // Transform playerTransform;
-   // Vector3 Offset;
-
-
-
     void Awake()
     {
         isJump = false;
@@ -35,15 +30,6 @@ public class Player : MonoBehaviour
         }
 
     }
-    
-
-
-  // void LateUpdate()
-  // {
-  //     transform.position = playerTransform.position + Offset;
-  // }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -65,8 +51,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "MoveFloor")
         {
-             // playerTransform = GameObject.FindGameObjectWithTag("MoveFloor").transform;
-             // Offset = transform.position - playerTransform.position;
+             
              isJump = false;
        
         }
@@ -95,7 +80,7 @@ public class Player : MonoBehaviour
                     SceneManager.LoadScene("Stage3");
                 else if (manager.stage == 3)
                 {
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene("FinshMenu");
                 }
                 
             }
@@ -112,7 +97,7 @@ public class Player : MonoBehaviour
         
     }
 
-    void OnTriggerStay(Collider other) // ¹°¸®Àû Ãæµ¹ÀÌ¾Æ´Ñ °ãÃÆ³ª ¾È°ãÃÆ³ª 
+    void OnTriggerStay(Collider other) 
     {
         if(other.tag == "SuperJump")
         {
