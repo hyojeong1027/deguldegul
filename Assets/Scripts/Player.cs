@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             itemCount++;
             audio.Play();
             other.gameObject.SetActive(false);
-
+            manager.GetItem(itemCount);
         }
        
 
@@ -89,11 +89,24 @@ public class Player : MonoBehaviour
         {
             if (itemCount == manager.totalItemCount)
             {
-                SceneManager.LoadScene(manager.stage + 1);
+                if (manager.stage == 0)
+                    SceneManager.LoadScene("Stage1");
+                else if (manager.stage == 1)
+                    SceneManager.LoadScene("Stage2");
+                else if (manager.stage == 2)
+                {
+                    SceneManager.LoadScene("Stage0");
+                }
+                
             }
             else
             {
-                SceneManager.LoadScene(manager.stage);
+                if (manager.stage == 0)
+                    SceneManager.LoadScene("Stage0");
+                else if(manager.stage == 1)
+                    SceneManager.LoadScene("Stage1");
+                else if(manager.stage == 2)
+                    SceneManager.LoadScene("Stage2");
             }
         }
         
