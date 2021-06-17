@@ -10,10 +10,26 @@ public class GameManagerLogic : MonoBehaviour
     public int stage;
     public Text StageItemText;
     public Text GetItemText;
+    public GameObject MenuSet;
 
     private void Awake()
     {
         StageItemText.text = "/ " + totalItemCount;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (MenuSet.activeSelf)
+            {
+                MenuSet.SetActive(false);
+            }
+            else
+            {
+                MenuSet.SetActive(true);
+            }
+        }
     }
     public void GetItem(int count)
     {
