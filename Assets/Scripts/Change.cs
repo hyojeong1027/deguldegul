@@ -7,7 +7,7 @@ public class Change : MonoBehaviour
 {
     public void SceneChange()
     {
-        SceneManager.LoadScene("Stage0");
+        SceneManager.LoadScene("Stage1");
     }
     public void GameExit()
     {

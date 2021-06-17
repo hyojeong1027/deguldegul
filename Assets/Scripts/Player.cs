@@ -89,24 +89,24 @@ public class Player : MonoBehaviour
         {
             if (itemCount == manager.totalItemCount)
             {
-                if (manager.stage == 0)
-                    SceneManager.LoadScene("Stage1");
-                else if (manager.stage == 1)
+                if (manager.stage == 1)
                     SceneManager.LoadScene("Stage2");
                 else if (manager.stage == 2)
+                    SceneManager.LoadScene("Stage3");
+                else if (manager.stage == 3)
                 {
-                    SceneManager.LoadScene("Stage0");
+                    SceneManager.LoadScene("MainMenu");
                 }
                 
             }
             else
             {
-                if (manager.stage == 0)
-                    SceneManager.LoadScene("Stage0");
-                else if(manager.stage == 1)
+                if (manager.stage == 1)
                     SceneManager.LoadScene("Stage1");
                 else if(manager.stage == 2)
                     SceneManager.LoadScene("Stage2");
+                else if(manager.stage == 3)
+                    SceneManager.LoadScene("Stage3");
             }
         }
         
